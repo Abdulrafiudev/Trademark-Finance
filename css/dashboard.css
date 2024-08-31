@@ -96,9 +96,16 @@ body {
   box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1),
     0 6px 20px rgba(255, 255, 255, 0.1);
   padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 .available_balance h2 {
   color: white;
+}
+.available_balance span {
+  font-size: 35px;
+  font-weight: 700;
 }
 @media (max-width: 40em) {
   .dashboard-sidebar {
