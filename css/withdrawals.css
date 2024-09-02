@@ -1,0 +1,29 @@
+.deposit_body h3 {
+  color: white;
+}
+.withdrawal_submit {
+  /* background-color: yellow; */
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 50px;
+}
+.withdrawal_submit input {
+  width: 30%;
+  border-radius: 40px;
+  background-color: #fd961a;
+  border: 1px solid #fd961a;
+  transition: background-color 0.7s;
+  font-weight: 700;
+}
+.withdrawal_submit input:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+}
+
+@media (max-width: 38em) {
+  .withdrawal_submit input {
+    width: 100%;
+  }
+}

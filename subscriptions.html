@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Subscriptions</title>
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/skins/orange.css" />
     <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="css/subscriptions.css " />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       rel="stylesheet"
@@ -29,30 +30,48 @@
     <main class="dashboard-container">
       <div class="dashboard-container_body">
         <div class="dashboard-sidebar">
-          <a class="active"> Dashboard </a>
+          <a href="dashboard.html"> Dashboard </a>
           <a href="deposit.html"> Deposit</a>
           <a href="withdrawals.html"> Withdrawals</a>
           <a href="transcation.html"> Transaction History</a>
-          <a href="subscriptions.html">Subscriptions</a>
+          <a href="subscriptions.html" class="active">Subscriptions</a>
           <!-- <span> Pricing </span> -->
-          <a href="help.html"> Help </a>
+          <a href="terms.html"> Terms Of Services </a>
         </div>
-        <div class="dashboard-body">
-          <div class="available_balance">
-            <h2>Total Balance:</h2>
-            <span> 0.00 BTC</span>
-          </div>
-          <div class="available_balance">
-            <h2>Interest Accumulated:</h2>
-            <span> 0.00</span>
-          </div>
-          <div class="available_balance">
-            <h2>Total Deposited($):</h2>
-            <span> $0.00</span>
-          </div>
-          <div class="available_balance">
-            <h2>Total Transactions:</h2>
-            <span> 0</span>
+        <div class="Subscription-body">
+          <h2>Subscriptions</h2>
+          <p>Plans</p>
+          <div class="subscriptions-plans">
+            <div class="subscriptions-plans_body">
+              <h2>free plan</h2>
+              <span> $0 </span>
+              <div class="ul">
+                <p class="individual_plan">✅ Return 1.00%</p>
+                <p class="individual_plan">✅ Once a week</p>
+                <p class="individual_plan">✅ 30 Days</p>
+              </div>
+              <div class="subscribe_button">Subscribe</div>
+            </div>
+            <div class="subscriptions-plans_body">
+              <h2>Basic plan</h2>
+              <span> $250 </span>
+              <div class="ul">
+                <p class="individual_plan">✅ Return 5.00%</p>
+                <p class="individual_plan">✅ Three times a week</p>
+                <p class="individual_plan">✅ 30 Days</p>
+              </div>
+              <div class="subscribe_button">Subscribe</div>
+            </div>
+            <div class="subscriptions-plans_body">
+              <h2>Premium plan</h2>
+              <span> $500 </span>
+              <div class="ul">
+                <p class="individual_plan">✅ Return 10.00%</p>
+                <p class="individual_plan">✅ Everyday</p>
+                <p class="individual_plan">✅ 30 Days</p>
+              </div>
+              <div class="subscribe_button">Subscribe</div>
+            </div>
           </div>
         </div>
       </div>

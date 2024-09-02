@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard</title>
+    <title>Withdrawals</title>
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/skins/orange.css" />
     <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="css/deposit.css" />
+    <link rel="stylesheet" href="css/withdrawals.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       rel="stylesheet"
@@ -29,31 +31,34 @@
     <main class="dashboard-container">
       <div class="dashboard-container_body">
         <div class="dashboard-sidebar">
-          <a class="active"> Dashboard </a>
+          <a href="dashboard.html"> Dashboard </a>
           <a href="deposit.html"> Deposit</a>
-          <a href="withdrawals.html"> Withdrawals</a>
-          <a href="transcation.html"> Transaction History</a>
+          <a href="withdrawals.html" class="active"> Withdrawals</a>
+          <a href="transaction.html"> Transaction History</a>
           <a href="subscriptions.html">Subscriptions</a>
           <!-- <span> Pricing </span> -->
-          <a href="help.html"> Help </a>
+          <a href="terms.html"> Terms Of Services </a>
         </div>
-        <div class="dashboard-body">
-          <div class="available_balance">
-            <h2>Total Balance:</h2>
-            <span> 0.00 BTC</span>
-          </div>
-          <div class="available_balance">
-            <h2>Interest Accumulated:</h2>
-            <span> 0.00</span>
-          </div>
-          <div class="available_balance">
-            <h2>Total Deposited($):</h2>
-            <span> $0.00</span>
-          </div>
-          <div class="available_balance">
-            <h2>Total Transactions:</h2>
-            <span> 0</span>
-          </div>
+        <div class="deposit_body">
+          <h2>Withdrawals</h2>
+          <h3>Avaliable Balance: 0.00BTC</h3>
+          <form class="deposit_body_details">
+            <div class="deposit_body_details_cont">
+              <span>
+                Input your personal wallet address to receive your crypto
+                tokens.</span
+              >
+              <input placeholder="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH" />
+            </div>
+
+            <div class="deposit_body_details_cont">
+              <label> Amount($): </label>
+              <input />
+            </div>
+            <div class="withdrawal_submit">
+              <input type="submit" value="Withdraw" />
+            </div>
+          </form>
         </div>
       </div>
     </main>
@@ -203,5 +208,7 @@
       </div>
       <!-- Footer Bottom Area Ends -->
     </footer>
+
+    <script src="js/deposit.js"></script>
   </body>
 </html>
