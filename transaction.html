@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Trademark Finance | Subscriptions</title>
+    <title>Trademark Finance | Transaction</title>
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/magnific-popup.css" />
@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/skins/orange.css" />
     <link rel="stylesheet" href="./css/dashboard.css" />
-    <link rel="stylesheet" href="css/subscriptions.css " />
+    <link rel="stylesheet" href="css/deposit.css" />
+    <link rel="stylesheet" href="css/withdrawals.css" />
+    <link rel="stylesheet" href="css/transaction.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       rel="stylesheet"
@@ -43,11 +45,11 @@
             <i class="fa fa-money-bill-wave"></i>
             <span> Withdrawals</span>
           </a>
-          <a href="transaction.html">
+          <a href="transaction.html" class="active">
             <i class="fa fa-history"></i>
             <span> Transactions </span>
           </a>
-          <a href="subscriptions.html" class="active">
+          <a href="subscriptions.html">
             <i class="fa fa-star"></i>
             <span>Subscriptions</span>
           </a>
@@ -56,51 +58,45 @@
             <i class="fa fa-file-alt"></i><span> Terms Of Services </span>
           </a>
         </div>
-        <div class="Subscription-body">
-          <h2>Subscriptions</h2>
-          <p>Plans</p>
-          <div class="subscriptions-plans">
-            <div class="subscriptions-plans_body">
-              <h2>Basic plan</h2>
-              <span> $100.00 - $10,000.00 </span>
-              <div class="ul">
-                <p class="individual_plan">✅ Return 5.00%</p>
-                <p class="individual_plan">✅ Once a week</p>
-                <p class="individual_plan">✅ 30 Days</p>
-              </div>
-              <div class="subscribe_button">Subscribe</div>
-            </div>
-            <div class="subscriptions-plans_body">
-              <h2>Pro plan</h2>
-              <span> $10,000.00 - $50,000.00</span>
-              <div class="ul">
-                <p class="individual_plan">✅ Return 10.00%</p>
-                <p class="individual_plan">✅ Three times a week</p>
-                <p class="individual_plan">✅ 30 Days</p>
-              </div>
-              <div class="subscribe_button">Subscribe</div>
-            </div>
-            <div class="subscriptions-plans_body">
-              <h2>Premium plan</h2>
-              <span> $50,000.00 - $100,000.00</span>
-              <div class="ul">
-                <p class="individual_plan">✅ Return 20.00%</p>
-                <p class="individual_plan">✅ Everyday</p>
-                <p class="individual_plan">✅ 30 Days</p>
-              </div>
-              <div class="subscribe_button">Subscribe</div>
-            </div>
-            <div class="subscriptions-plans_body">
-              <h2>Ultimate plan</h2>
-              <span> 100,000.00- $100,000,000.00 </span>
-              <div class="ul">
-                <p class="individual_plan">✅ Return 30.00%</p>
-                <p class="individual_plan">✅ Everyday</p>
-                <p class="individual_plan">✅ 30 Days</p>
-                <p class="individual_plan">✅ Instant Withdrawals</p>
-              </div>
-              <div class="subscribe_button">Subscribe</div>
-            </div>
+        <div class="deposit_body">
+          <h2>Transaction History</h2>
+          <div class="col-xs-12 table-responsive">
+            <table class="table order text-center">
+              <colgroup>
+                <col class="col-xs-1" />
+                <!-- col-sm-5 -->
+                <col class="col-xs-2" />
+                <col class="col-xs-2" />
+                <col class="col-xs-1 col-sm-2" />
+                <col class="col-xs-2 col-sm-2" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Trx</th>
+                  <th>Transacted</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-center">
+                    <a href="#" class="fa fa-trash icon-delete-product"></a>
+                  </td>
+                  <td class="text-left">
+                    <span class="product"> #44466</span>
+                  </td>
+                  <td class="text-left"><span class="price">Today</span></td>
+                  <td class="text-left">
+                    <span>0.179 BTC </span>
+                  </td>
+                  <td class="text-left">
+                    <span class="price"> 🟡Pending</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -251,5 +247,7 @@
       </div>
       <!-- Footer Bottom Area Ends -->
     </footer>
+
+    <script src="js/deposit.js"></script>
   </body>
 </html>

@@ -1,0 +1,32 @@
+.table.order thead tr {
+  background: #222;
+  color: #fff;
+  text-transform: capitalize;
+  border: 1px solid #222;
+  font-size: 18px;
+  font-weight: 600;
+}
+.table.order thead tr th {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: none;
+}
+
+.table.order tr td {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 500;
+  border-top: none;
+}
+@media (max-width: 63em) {
+  .table-responsive {
+    border: none;
+    padding: 0;
+  }
+}
+@media (max-width: 38em) {
+  .table.order thead tr {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}

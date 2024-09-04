@@ -19,6 +19,7 @@
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr 1fr;
+
   column-gap: 30px;
 }
 .subscriptions-plans_body {
@@ -75,12 +76,15 @@
   color: black;
   border: 1px solid white;
 }
+.footer {
+  margin-top: 500px;
+}
 @media (max-width: 63em) {
   .subscriptions-plans {
     grid-template-columns: 1fr;
     row-gap: 30px;
   }
   .footer {
-    margin-top: 800px;
+    margin-top: 1350px;
   }
 }
