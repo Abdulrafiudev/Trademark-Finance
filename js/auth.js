@@ -20,6 +20,7 @@ form.addEventListener("submit", async (e) => {
       headers: {
         "Content-Type": "application/json",
       },
+      withCredentials: true,
     });
     console.log(response.data);
     username.value = "";
