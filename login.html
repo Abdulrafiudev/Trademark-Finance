@@ -15,6 +15,13 @@
     <link rel="stylesheet" href="css/select2.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/skins/orange.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+      integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <!-- Template JS Files -->
     <script src="js/modernizr.js"></script>
@@ -158,7 +165,7 @@
               </div>
               <!-- Section Title Ends -->
               <!-- Form Starts -->
-              <form>
+              <form class="loginForm">
                 <!-- Input Field Starts -->
                 <div class="form-group">
                   <input
@@ -182,10 +189,17 @@
                     required
                   />
                 </div>
+
                 <!-- Input Field Ends -->
                 <!-- Submit Form Button Starts -->
                 <div class="form-group">
-                  <button class="btn btn-primary" type="submit">login</button>
+                  <button
+                    class="btn btn-primary spinner_button_div"
+                    type="submit"
+                  >
+                    <span id="spinner" class="spinner"></span> login
+                  </button>
+
                   <p class="text-center">
                     don't have an account ?
                     <a href="register.html">register now</a>
@@ -210,6 +224,14 @@
       <script src="js/select2.min.js"></script>
       <script src="js/jquery.magnific-popup.min.js"></script>
       <script src="js/custom.js"></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      ></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+      <script src="js/authIn.js" type="module"></script>
     </div>
     <!-- Wrapper Ends -->
   </body>

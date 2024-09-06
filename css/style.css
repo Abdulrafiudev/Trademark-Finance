@@ -5174,3 +5174,27 @@ h4.panel-title a.collapsed:before {
     font-size: 28px;
   }
 }
+.spinner_button_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.spinner {
+  border: 3px solid #f3f3f3; /* Light grey */
+  border-top: 3px solid black; /* Blue */
+  display: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

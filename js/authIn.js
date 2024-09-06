@@ -1,13 +1,10 @@
 import backendAPI from "../api/api.js";
 
-const username = document.querySelector("#name");
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
+const form = document.querySelector(".loginForm");
 const spinner = document.querySelector(".spinner");
 const spinnerButton = document.querySelector(".spinner_button_div");
-
-const form = document.querySelector("#registerForm");
-console.log(form);
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -16,35 +13,38 @@ form.addEventListener("submit", async (e) => {
   spinnerButton.disabled = true;
 
   const formData = {
-    username: username.value,
     email: email.value,
     password: password.value,
   };
   try {
-    const response = await axios.post(`${backendAPI}/signup`, formData, {
+    const response = await axios.post(`${backendAPI}/signin`, formData, {
       headers: {
         "Content-Type": "application/json",
       },
       withCredentials: true,
     });
     console.log(response.data);
-    username.value = "";
-    email.value = "";
-    password.value = "";
-    const { message, success, users } = response.data;
-
+    const { message, success } = response.data;
+    console.log("message:", message);
+    console.log("success:", success);
     if (success) {
       $(function () {
-        toastr.success("User Registerd successfully.");
+        toastr.success(`${message}`);
       });
-
       setTimeout(() => {
         window.location.href = "../dashboard.html";
       }, 1000);
     }
+    if (!success) {
+      $(function () {
+        toastr.error(`${message}`);
+      });
+    }
   } catch (err) {
     $(function () {
-      toastr.error("User Email already exist");
+      toastr.error(
+        "User credentials does not exist. Kindly go to the register page."
+      );
     });
     console.log(err);
   } finally {
