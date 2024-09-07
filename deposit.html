@@ -79,14 +79,33 @@
             <div class="deposit_body_details_cont1">
               <span> Select cryptocurrency you want to invest in:</span>
               <select>
-                <option selected>Bitcoin (BTC)</option>
-                <option>USDT</option>
-                <option>Ethereum (ETH)</option>
+                <option selected>Select cryptocurrency</option>
+                <option value="bitcoin">Bitcoin (BTC)</option>
+                <option value="tether">Tether (USDT)</option>
+                <option value="Ethereum">Ethereum (ETH)</option>
               </select>
             </div>
             <div class="deposit_body_details_cont">
               <label> Amount($): </label>
               <input />
+            </div>
+            <div class="amount_error">
+              <span> Please enter an amount($)</span>
+            </div>
+            <div class="dynamic_amount_converter">
+              <div class="dynamic_amount_converter__amount">
+                <span> Amount: </span>
+                <span class="dollar_amount"> $500</span>
+              </div>
+              <div class="dynamic_amount_converter__crypto">
+                <span class="crypto_amount_statement">Amount in Crypto:</span>
+                <span class="crypto_amount"> 0.005BTC</span>
+              </div>
+              <div>
+                <span class="dynamic_amount_converter__statement">
+                  You'll receive $500 dollars worth of BTC in your wallet.</span
+                >
+              </div>
             </div>
             <div class="deposit_submit">
               <input type="submit" value="Deposit" />

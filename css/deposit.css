@@ -68,6 +68,37 @@
   color: black;
   border: 1px solid white;
 }
+footer {
+  margin-top: 150px;
+}
+.amount_error span {
+  font-size: 16px;
+  font-weight: 600;
+  color: red;
+  display: none;
+}
+.dynamic_amount_converter {
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+.dynamic_amount_converter__crypto,
+.dynamic_amount_converter__amount,
+.dynamic_amount_converter__statement {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.dynamic_amount_converter__crypto span,
+.dynamic_amount_converter__amount span {
+  font-size: 16px;
+  font-weight: 600;
+}
+.dynamic_amount_converter__statement {
+  font-size: 16px !important;
+  font-weight: 600;
+}
 
 @media (max-width: 38em) {
   .deposit_submit input {
