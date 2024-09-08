@@ -14,7 +14,7 @@ logoutButton.addEventListener("click", async () => {
       });
       setTimeout(() => {
         window.location.href = "../index.html";
-      }, 500);
+      }, 1000);
     }
   } catch (err) {
     $(function () {

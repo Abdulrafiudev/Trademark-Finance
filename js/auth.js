@@ -35,11 +35,11 @@ form.addEventListener("submit", async (e) => {
 
     if (success) {
       $(function () {
-        toastr.success("User Registerd successfully.");
+        toastr.success(message);
       });
 
       setTimeout(() => {
-        window.location.href = "../dashboard.html";
+        window.location.href = "../verifyOtp.html";
       }, 1000);
     }
   } catch (err) {
