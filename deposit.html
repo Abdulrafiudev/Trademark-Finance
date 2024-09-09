@@ -68,7 +68,7 @@
         </div>
         <div class="deposit_body">
           <h2>Deposit</h2>
-          <form class="deposit_body_details">
+          <form class="deposit_body_details depositForm">
             <div class="deposit_body_details_cont">
               <span> Select a payment method from below:</span>
               <select>
@@ -107,8 +107,11 @@
                 >
               </div>
             </div>
-            <div class="deposit_submit">
-              <input type="submit" value="Deposit" />
+            <div style="width: 100%; display: flex; justify-content: center">
+              <button class="deposit_submit spinner_button_div" type="submit">
+                <span id="spinner" class="spinner"></span>
+                Deposit
+              </button>
             </div>
           </form>
         </div>
@@ -240,7 +243,7 @@
       <!-- Footer Bottom Area Ends -->
     </footer>
 
-    <script src="js/deposit.js"></script>
+    <script src="js/deposit.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>

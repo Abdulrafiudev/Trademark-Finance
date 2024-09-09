@@ -1,3 +1,5 @@
+import backendAPI from "../api/api.js";
+
 const selectedInput = document.querySelector(
   ".deposit_body_details_cont1 select"
 );
@@ -5,6 +7,9 @@ const amountInput = document.querySelector(".deposit_body_details_cont input");
 const amountError = document.querySelector(".amount_error span");
 const convertedInfo = document.querySelector(".dynamic_amount_converter");
 const usdInfoAmmountDiv = document.querySelector(".dollar_amount");
+const depositForm = document.querySelector(".depositForm");
+const spinner = document.querySelector(".spinner");
+const spinnerButton = document.querySelector(".spinner_button_div");
 
 const convertedInfoAmountDiv1 = document.querySelector(
   ".crypto_amount_statement"
@@ -57,3 +62,36 @@ async function currencyConverter() {
 
 amountInput.addEventListener("input", currencyConverter);
 selectedInput.addEventListener("change", currencyConverter);
+
+depositForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  spinner.style.display = "block";
+  spinnerButton.disabled = true;
+  const formData = {
+    amount: amountInput.value,
+  };
+  try {
+    const response = await axios.post(`${backendAPI}/payments`, formData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      withCredentials: true,
+    });
+    console.log(response.data);
+    const { data, message, status } = response.data;
+
+    const { link } = data;
+    if (status) {
+      setTimeout(() => {
+        window.location.href = link;
+      }, 1000);
+    } else {
+      console.log("Invalid Payment Initialisation");
+    }
+  } catch (err) {
+    console.log("error:", err);
+  } finally {
+    spinner.style.display = "none";
+    spinnerButton.disabled = false;
+  }
+});
