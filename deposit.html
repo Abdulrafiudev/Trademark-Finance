@@ -73,21 +73,24 @@
               <span> Select a payment method from below:</span>
               <select>
                 <option selected>Select a payment method</option>
-                <option>Credit card</option>
+                <option>Wallet</option>
               </select>
             </div>
             <div class="deposit_body_details_cont1">
               <span> Select cryptocurrency you want to invest in:</span>
               <select>
-                <option selected>Select cryptocurrency</option>
-                <option value="bitcoin">Bitcoin (BTC)</option>
-                <option value="tether">Tether (USDT)</option>
+                <option selected value="null">Select cryptocurrency</option>
+                <option value="Bitcoin">Bitcoin (BTC)</option>
+                <option value="Tether">Tether (USDT)</option>
                 <option value="Ethereum">Ethereum (ETH)</option>
               </select>
+              <div class="crypto_error">
+                <span> Please select a crypto exchange.</span>
+              </div>
             </div>
             <div class="deposit_body_details_cont">
               <label> Amount($): </label>
-              <input />
+              <input required />
             </div>
             <div class="amount_error">
               <span> Please enter an amount($)</span>
@@ -242,6 +245,26 @@
       </div>
       <!-- Footer Bottom Area Ends -->
     </footer>
+
+    <div class="modal">
+      <div class="deposit_modal">
+        <div class="close_button">
+          <i class="fas fa-times"></i>
+        </div>
+        <h2>Bitcoin wallet payment</h2>
+        <p class="deposit_modal_statement">
+          You have request $500 worth of bitcoin. Please pay 0.005btc for a
+          successful payment.
+        </p>
+        <div class="deposit_modal_address">
+          <p>Wallet address:</p>
+          <span class="deposit_modal_address__wallet"></span>
+        </div>
+        <button class="confirm_button spinner_button_div1">
+          <span id="spinner" class="spinner1"></span> Confirm Payment
+        </button>
+      </div>
+    </div>
 
     <script src="js/deposit.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>

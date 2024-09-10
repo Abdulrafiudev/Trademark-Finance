@@ -5174,13 +5174,15 @@ h4.panel-title a.collapsed:before {
     font-size: 28px;
   }
 }
-.spinner_button_div {
+.spinner_button_div,
+.spinner_button_div1 {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
 }
-.spinner {
+.spinner,
+.spinner1 {
   border: 3px solid #f3f3f3; /* Light grey */
   border-top: 3px solid black; /* Blue */
   display: none;

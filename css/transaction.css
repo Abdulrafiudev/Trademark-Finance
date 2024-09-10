@@ -18,6 +18,10 @@
   font-weight: 500;
   border-top: none;
 }
+.delete_button {
+  z-index: 100;
+  cursor: pointer;
+}
 @media (max-width: 63em) {
   .table-responsive {
     border: none;

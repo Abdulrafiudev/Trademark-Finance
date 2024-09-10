@@ -1,3 +1,7 @@
+body.modal {
+  height: 100vh;
+  overflow-y: hidden;
+}
 .deposit_body {
   width: 100%;
   height: 90%;
@@ -70,7 +74,8 @@
 footer {
   margin-top: 150px;
 }
-.amount_error span {
+.amount_error span,
+.crypto_error span {
   font-size: 16px;
   font-weight: 600;
   color: red;
@@ -98,9 +103,111 @@ footer {
   font-size: 16px !important;
   font-weight: 600;
 }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  opacity: 0.95;
+  height: 100vh;
+  z-index: 100;
+  transition: display 1s;
+}
+.modal.show {
+  display: flex !important;
+}
+.deposit_modal {
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  /* border: 1px solid #fd961a; */
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 500;
+  padding: 12px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2), 0 0 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.deposit_modal h2 {
+  color: black;
+}
+.deposit_modal p {
+  color: black;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  margin: 0;
+}
+.deposit_modal_address {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 20px;
+}
+.deposit_modal_address__wallet {
+  color: green;
+  font-size: 18px;
+  font-weight: 600;
+  white-space: wrap;
+}
+.confirm_button {
+  width: 40%;
+  background-color: #fd961a;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 5px 10px;
+  border: 1px solid #fd961a;
+  border-radius: 20px;
+  transition: all 0.7s;
+}
+/* .confirm_button:hover {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+} */
+.close_button {
+  background-color: #ccc;
 
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 50;
+  top: -50px;
+  right: -10px;
+  cursor: pointer;
+}
+.fa-times {
+  color: black;
+}
 @media (max-width: 38em) {
   .deposit_submit {
     width: 100%;
+  }
+  .deposit_modal {
+    width: 90%;
+    height: 40%;
+  }
+  .deposit_modal p {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .confirm_button {
+    width: 100%;
+  }
+  .deposit_modal_address {
+    gap: 10px;
   }
 }

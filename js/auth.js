@@ -28,9 +28,7 @@ form.addEventListener("submit", async (e) => {
       withCredentials: true,
     });
     console.log(response.data);
-    username.value = "";
-    email.value = "";
-    password.value = "";
+
     const { message, success, users } = response.data;
 
     if (success) {
