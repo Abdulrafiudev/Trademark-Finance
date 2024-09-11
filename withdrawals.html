@@ -79,17 +79,34 @@
               <input placeholder="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH" />
             </div>
 
-            <div class="deposit_body_details_cont">
+            <div class="deposit_body_details_cont amountwithdraw">
               <label> Amount($): </label>
               <input />
             </div>
+            <span class="error_message"
+              >Please input an amount to withdraw</span
+            >
             <div class="withdrawal_submit">
-              <input type="submit" value="Withdraw" />
+              <input type="button" value="Withdraw" />
             </div>
           </form>
         </div>
       </div>
     </main>
+
+    <div class="modal">
+      <div class="deposit_modal withdrawal_modal">
+        <div class="close_button">
+          <i class="fas fa-times"></i>
+        </div>
+        <h2>Unable to Withdraw</h2>
+        <p class="deposit_modal_statement">
+          You must have a minimum of $10,000 worth of crypto invested for a
+          minimum of 3 months to be able to withdraw your funds.
+        </p>
+      </div>
+    </div>
+
     <footer class="footer">
       <!-- Footer Top Area Starts -->
       <div class="top-footer">
@@ -216,7 +233,6 @@
       <!-- Footer Bottom Area Ends -->
     </footer>
 
-    <script src="js/deposit.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
@@ -226,7 +242,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./js/dashboard.js" type="module"></script>
+
     <script src="js/logOut.js" type="module"></script>
+    <script src="js/withdrawals.js"></script>
   </body>
 </html>

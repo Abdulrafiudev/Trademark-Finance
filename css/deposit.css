@@ -75,11 +75,15 @@ footer {
   margin-top: 150px;
 }
 .amount_error span,
-.crypto_error span {
+.crypto_error span,
+.error_message {
   font-size: 16px;
   font-weight: 600;
   color: red;
   display: none;
+}
+.error_message {
+  font-size: 16px !important;
 }
 .dynamic_amount_converter {
   /* display: flex; */
@@ -136,8 +140,14 @@ footer {
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2), 0 0 10px rgba(0, 0, 0, 0.5);
   position: relative;
 }
+.withdrawal_modal {
+  height: 30%;
+}
 .deposit_modal h2 {
   color: black;
+}
+.withdrawal_modal h2 {
+  text-wrap: nowrap;
 }
 .deposit_modal p {
   color: black;
