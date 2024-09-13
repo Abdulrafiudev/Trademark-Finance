@@ -59,7 +59,7 @@ async function currencyConverter() {
         );
         console.log("response:", response.data);
 
-        //conversion rate from btc to usd
+        //conversion rate from usd to btc
         const conversionRate =
           response.data[toCurrency.toLowerCase()][fromCurrency];
 

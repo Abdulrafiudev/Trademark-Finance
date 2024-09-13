@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/skins/orange.css" />
     <link rel="stylesheet" href="./css/dashboard.css" />
     <link rel="stylesheet" href="css/subscriptions.css " />
+    <link rel="stylesheet" href="css/deposit.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       rel="stylesheet"
@@ -72,44 +73,44 @@
           <div class="subscriptions-plans">
             <div class="subscriptions-plans_body">
               <h2>Basic plan</h2>
-              <span> $100.00 - $10,000.00 </span>
+              <span> $100.00 - $9,999.99 </span>
               <div class="ul">
                 <p class="individual_plan">✅ Return 5.00%</p>
                 <p class="individual_plan">✅ Everyday</p>
                 <p class="individual_plan">✅ 30 Days</p>
               </div>
-              <div class="subscribe_button">Subscribe</div>
+              <div class="subscribe_button" data-plan="Basic">Subscribe</div>
             </div>
             <div class="subscriptions-plans_body">
               <h2>Pro plan</h2>
-              <span> $10,000.00 - $50,000.00</span>
+              <span> $10,000.00 - $49,999.99</span>
               <div class="ul">
                 <p class="individual_plan">✅ Return 7.50%</p>
                 <p class="individual_plan">✅ Everyday</p>
                 <p class="individual_plan">✅ 30 Days</p>
               </div>
-              <div class="subscribe_button">Subscribe</div>
+              <div class="subscribe_button" data-plan="Pro">Subscribe</div>
             </div>
             <div class="subscriptions-plans_body">
               <h2>Premium plan</h2>
-              <span> $50,000.00 - $100,000.00</span>
+              <span> $50,000.00 - $99,999.99</span>
               <div class="ul">
                 <p class="individual_plan">✅ Return 10.00%</p>
                 <p class="individual_plan">✅ Everyday</p>
                 <p class="individual_plan">✅ 30 Days</p>
               </div>
-              <div class="subscribe_button">Subscribe</div>
+              <div class="subscribe_button" data-plan="Premium">Subscribe</div>
             </div>
             <div class="subscriptions-plans_body">
               <h2>Ultimate plan</h2>
-              <span> 100,000.00- $100,000,000.00 </span>
+              <span> $100,000.00- $99,999,999.99 </span>
               <div class="ul">
                 <p class="individual_plan">✅ Return 12.50%</p>
                 <p class="individual_plan">✅ Everyday</p>
                 <p class="individual_plan">✅ 30 Days</p>
                 <p class="individual_plan">✅ Instant Withdrawals</p>
               </div>
-              <div class="subscribe_button">Subscribe</div>
+              <div class="subscribe_button" data-plan="Ultimate">Subscribe</div>
             </div>
           </div>
         </div>
@@ -241,6 +242,30 @@
       <!-- Footer Bottom Area Ends -->
     </footer>
 
+    <div class="modal">
+      <div class="deposit_modal subscription-modal">
+        <div class="close_button">
+          <i class="fas fa-times"></i>
+        </div>
+        <h2 class="subscription_modal__header"></h2>
+        <div class="subscriptionamount_container">
+          <label> Amount </label> <input placeholder="input an amount" />
+          <p class="subscription_error_span"></p>
+        </div>
+
+        <p class="deposit_modal_statement subscription_modal_statement"></p>
+        <div class="deposit_modal_address">
+          <p>Wallet address:</p>
+          <span
+            class="deposit_modal_address__wallet subscription_modal_address__wallet"
+          ></span>
+        </div>
+        <button class="confirm_button spinner_button_div1">
+          <span id="spinner" class="spinner"></span> Confirm Payment
+        </button>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/jquery.magnific-popup.min.js"></script>
@@ -250,7 +275,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./js/dashboard.js" type="module"></script>
     <script src="js/logOut.js" type="module"></script>
+    <script src="/js/subscription.js"></script>
   </body>
 </html>
