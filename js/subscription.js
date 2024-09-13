@@ -43,6 +43,13 @@ closeButton.addEventListener("click", () => {
   document.body.style.overflowY = "scroll";
   document.body.style.height = "100vh";
 });
+window.addEventListener("click", (event) => {
+  if (event.target.className == "modal show") {
+    modal.classList.remove("show");
+    document.body.style.overflowY = "scroll";
+    document.body.style.height = "100vh";
+  }
+});
 
 confirmButton.addEventListener("click", () => {
   spinner.style.display = "block";
@@ -66,6 +73,7 @@ function errorChecker(plan, id_1, id_2) {
       errorMessage.style.display = "block";
       errorMessage.innerText = `${plan} plan subscription must be between $${id_1} - $${id_2}`;
       paymentStatement.innerText = "";
+      console.log("payment statement:", paymentStatement.innerText);
     } else {
       errorMessage.style.display = "none";
       convertCurrency(amount);

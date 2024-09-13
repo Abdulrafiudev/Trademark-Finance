@@ -151,7 +151,9 @@ footer {
   height: 30%;
 }
 .subscription-modal {
-  height: 62%;
+  /* height: 62%; */
+  height: fit-content;
+  padding-bottom: 20px;
 }
 .subscription-modal label {
   color: black;
@@ -254,6 +256,7 @@ footer {
     gap: 10px;
   }
   .subscription-modal {
-    height: 63%;
+    /* height: 63%; */
+    height: fit-content;
   }
 }
