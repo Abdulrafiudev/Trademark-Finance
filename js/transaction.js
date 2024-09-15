@@ -1,4 +1,8 @@
 import transactions from "./transactionArray.js";
+import backendAPI from "../api/api.js";
+import getUser from "./getUser.js";
+
+getUser(backendAPI);
 
 console.log("transactions:", transactions);
 

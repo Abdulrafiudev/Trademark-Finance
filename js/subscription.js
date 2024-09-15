@@ -1,3 +1,8 @@
+import backendAPI from "../api/api.js";
+import getUser from "./getUser.js";
+
+getUser(backendAPI);
+
 const subscribeButton = document.querySelectorAll(".subscribe_button");
 const modal = document.querySelector(".modal");
 const modalInput = document.querySelector(".subscription-modal input");

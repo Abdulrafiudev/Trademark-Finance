@@ -1,3 +1,8 @@
+import backendAPI from "../api/api.js";
+import getUser from "./getUser.js";
+
+getUser(backendAPI);
+
 const withdrawButton = document.querySelector(".withdrawal_submit");
 const modal = document.querySelector(".modal");
 const closeButton = document.querySelector(".close_button");
