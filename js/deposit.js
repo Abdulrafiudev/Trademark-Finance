@@ -2,7 +2,7 @@ import transactions from "./transactionArray.js";
 import backendAPI from "../api/api.js";
 import getUser from "./getUser.js";
 
-getUser(backendAPI);
+const user = await getUser(backendAPI);
 
 const selectedInput = document.querySelector(
   ".deposit_body_details_cont1 select"
@@ -113,27 +113,47 @@ async function currencyConverter() {
   }
 }
 
-confirmButton.addEventListener("click", () => {
+confirmButton.addEventListener("click", async () => {
   spinner.style.display = "block";
-  $(function () {
-    toastr.info("Processing Payment");
-  });
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, "0");
-  const day = String(today.getDate()).padStart(2, "0");
-  const itemTransacted = {
-    delete: '<a class="fa fa-trash icon-delete-product"></a>',
-    trx: `tr-${Date.now()}`,
-    transacted: `${year}-${month}-${day}`,
-    amount: `${convertedAmount} ${toCurrency}`,
-    statusbar: "🟡Pending",
-  };
-  transactions.push(itemTransacted);
-  localStorage.setItem("transaction", JSON.stringify(transactions));
-  setTimeout(() => {
-    window.location.href = "../transaction.html";
-  }, 3000);
+  try {
+    $(function () {
+      toastr.info("Processing Payment");
+    });
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    const itemTransacted = {
+      delete: '<a class="fa fa-trash icon-delete-product"></a>',
+      trx: `tr-${Date.now()}`,
+      transacted: `${year}-${month}-${day}`,
+      amount: `${convertedAmount} ${toCurrency}`,
+      statusbar: "🟡Pending",
+    };
+    transactions.push(itemTransacted);
+    localStorage.setItem("transaction", JSON.stringify(transactions));
+    const formData = {
+      amount: amountInput.value,
+      currency: toCurrency,
+      email: user.email,
+    };
+    const response = await axios.post(
+      `${backendAPI}/confirmDeposit`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+    console.log("response:", response.data.message);
+    setTimeout(() => {
+      window.location.href = "../transaction.html";
+    }, 3000);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 const closeButton = document.querySelector(".close_button");

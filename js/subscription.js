@@ -1,7 +1,7 @@
 import backendAPI from "../api/api.js";
 import getUser from "./getUser.js";
 
-getUser(backendAPI);
+const user = await getUser(backendAPI);
 
 const subscribeButton = document.querySelectorAll(".subscribe_button");
 const modal = document.querySelector(".modal");
@@ -58,6 +58,7 @@ window.addEventListener("click", (event) => {
 
 confirmButton.addEventListener("click", () => {
   spinner.style.display = "block";
+  confirmSubscription();
   setTimeout(() => {
     spinner.style.display = "none";
     $(function () {
@@ -106,6 +107,29 @@ async function convertCurrency(amount) {
 
     const convertedAmount = (amount / conversionRate).toFixed(4);
     paymentStatement.innerText = `You have requested to pay $${amount} for this plan. Please pay ${convertedAmount}bitcoin to the wallet address below for a successful payment. `;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function confirmSubscription() {
+  try {
+    const formData = {
+      plan: modalHeader.innerText,
+      email: user.email,
+      amount: modalInput.value,
+    };
+    const response = await axios.post(
+      `${backendAPI}/confirmSubscription`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        withCredentials: true,
+      }
+    );
+    console.log("response:", response.data.message);
   } catch (err) {
     console.log(err);
   }
