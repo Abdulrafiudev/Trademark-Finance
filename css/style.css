@@ -2524,6 +2524,9 @@ section.services {
   height: 37px;
   float: left;
 }
+.img-responsive {
+  transform: scale(0.8);
+}
 
 .service-box > div {
   padding: 40px;
@@ -3283,6 +3286,13 @@ section.shop-checkout {
   box-shadow: none;
   border: 0;
 }
+.password_error {
+  font-size: 14px;
+  text-transform: lowercase !important;
+  color: red;
+  font-weight: 500;
+  display: none;
+}
 
 .shop-checkout .checkout table.products thead tr {
   background: #222;
@@ -3670,15 +3680,15 @@ section.shop-checkout {
 }
 
 #carousel-testimonials .item.item-1 {
-  background-image: url("../images/backgrounds/bg-user.jpg");
+  background-image: url("../assets/images/testimonial1.jpg");
 }
 
 #carousel-testimonials .item.item-2 {
-  background-image: url("../images/backgrounds/bg-user-2.jpg");
+  background-image: url("../assets/images/testimonial2.jpg");
 }
 
 #carousel-testimonials .item.item-3 {
-  background-image: url("../images/backgrounds/bg-user-3.jpg");
+  background-image: url("../assets/images/testimonial3.jpg");
 }
 
 #carousel-testimonials .carousel-control {
@@ -4552,6 +4562,7 @@ h4.panel-title a.collapsed:before {
   .mobile-logo {
     margin: 0 auto;
     margin-top: 70px;
+    transform: scale(0.5);
   }
 
   .user-auth > div:nth-child(2) {

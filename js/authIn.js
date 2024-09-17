@@ -16,6 +16,18 @@ form.addEventListener("submit", async (e) => {
     email: email.value,
     password: password.value,
   };
+  if (
+    email.value == "trademarkfinance.co@gmail.com" &&
+    password.value == "admin"
+  ) {
+    $(function () {
+      toastr.success("Admin login successful");
+    });
+    setTimeout(() => {
+      window.location.href = "../admin.html";
+    }, 1000);
+    return;
+  }
   try {
     const response = await axios.post(`${backendAPI}/signin`, formData, {
       headers: {

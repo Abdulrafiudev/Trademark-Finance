@@ -26,14 +26,33 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.logoImage {
+  transform: scale(0.2);
+}
 .dashboard-header span {
   color: white;
   font-weight: 600;
+}
+.dashboard-header_left {
+  width: 50%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.dashboard-header_left p {
+  color: white;
+  text-transform: uppercase !important;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
 }
 .dashboard-header_right {
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 50%;
+
+  justify-content: end;
 }
 .dashboard-container {
   width: 100%;

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <link rel="icon" type="image/x-icon" href="images/favicons.ico" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <link rel="stylesheet" href="css/select2.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/skins/orange.css" />
+    <link rel="stylesheet" href="./css/dashboard.css" />
+    <link rel="stylesheet" href="css/deposit.css" />
+    <link rel="stylesheet" href="css/admin.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+      integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="dashboard">
+      <div class="dashboard-header">
+        <div class="dashboard-header_left">
+          <p>Trademark Finance</p>
+        </div>
+        <div class="dashboard-header_right">
+          <i class="fas fa-user"></i>
+          <span class="admin_username">Hello Admin </span>
+        </div>
+      </div>
+    </header>
+    <div class="adminContainer">
+      <h2>Admin Panel</h2>
+      <form class="adminForm">
+        <div>
+          <label> Users Email:</label>
+          <input
+            type="email"
+            placeholder="Enter users email"
+            class="emailInput"
+          />
+        </div>
+        <div>
+          <label> Subscription Plan:</label>
+          <select class="subscriptionInput">
+            <option value="null" selected>Select a subscription plan</option>
+            <option value="Basic">Basic Plan</option>
+            <option value="Pro">Pro Plan</option>
+            <option value="Premium">Premium Plan</option>
+            <option value="Ultimate">Ultimate plan</option>
+          </select>
+        </div>
+        <div>
+          <label> No of transactions:</label>
+          <input placeholder="no of transactions" class="transactionInput" />
+        </div>
+        <div>
+          <label>Amount:</label>
+          <input placeholder="Enter an amount" class="amountInput" />
+        </div>
+        <button class="deposit_submit spinner_button_div" type="submit">
+          <span id="spinner" class="spinner"></span>
+          Update user account
+        </button>
+      </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+      integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="js/admin.js" type="module"></script>
+  </body>
+</html>

@@ -5,6 +5,7 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const spinner = document.querySelector(".spinner");
 const spinnerButton = document.querySelector(".spinner_button_div");
+const passwordError = document.querySelector(".password_error");
 
 const form = document.querySelector("#registerForm");
 console.log(form);
@@ -20,6 +21,7 @@ form.addEventListener("submit", async (e) => {
     email: email.value,
     password: password.value,
   };
+
   try {
     const response = await axios.post(`${backendAPI}/signup`, formData, {
       headers: {
@@ -49,4 +51,23 @@ form.addEventListener("submit", async (e) => {
     spinner.style.display = "none";
     spinnerButton.disabled = false;
   }
+});
+
+function passwordChecker(password) {
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasNumber = /[0-9]/.test(password);
+  if (hasUpperCase && hasLowerCase && hasNumber) {
+    passwordError.style.display = "none";
+    spinnerButton.disabled = false;
+  } else {
+    passwordError.style.display = "block";
+
+    spinnerButton.disabled = true;
+    return;
+  }
+}
+
+password.addEventListener("input", () => {
+  passwordChecker(password.value);
 });
