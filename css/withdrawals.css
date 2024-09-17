@@ -16,11 +16,11 @@
   transition: background-color 0.7s;
   font-weight: 700;
 }
-.withdrawal_submit input:hover {
+/* .withdrawal_submit input:hover {
   background-color: white;
   color: black;
   border: 1px solid white;
-}
+} */
 
 @media (max-width: 38em) {
   .withdrawal_submit input {

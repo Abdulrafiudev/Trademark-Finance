@@ -18,9 +18,9 @@ const spinnerButton = document.querySelector(".spinner_button_div1");
 const modalHeader = document.querySelector(".deposit_modal h2");
 const modalStatement = document.querySelector(".deposit_modal_statement");
 const walletAddress = document.querySelector(".deposit_modal_address__wallet");
-const bitcoinWallet = "1FfmbHfnpaZjKFvyi1okTjJJusN455paPH";
-const tetherWallet = "1FfmbHf4444444Fvyi1okTjJJusN455paPH";
-const ethereumWallet = "1FfmbHfnpaZjKFvyi1okTjJJ57jjdsguyegvwugvas";
+const bitcoinWallet = "bc1q4lfmrrzvg4n9vkt6uv57qv4xxe5qslp8nmx3d0";
+const tetherWallet = "TRaw2EZti39siHfJep8ggnkDSjjPhc5bkd";
+const ethereumWallet = "0x6C6380350a42bE99b2D9c81168339E0c3E9b5cb6";
 const confirmButton = document.querySelector(".confirm_button");
 
 const convertedInfoAmountDiv1 = document.querySelector(

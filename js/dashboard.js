@@ -7,7 +7,7 @@ const accumulatedInterest = document.querySelector(".user_interest");
 const totalDeposit = document.querySelector(".user_deposit");
 const userTransaction = document.querySelector(".user-transaction");
 
-let amount = JSON.parse(localStorage.getItem("amount")) || user.balance;
+export let amount = JSON.parse(localStorage.getItem("amount")) || user.balance;
 
 let accumulatedAmount =
   JSON.parse(localStorage.getItem("accumulatedAmount")) || 0;
@@ -56,6 +56,9 @@ function calculateDailyReturn() {
 
   availableBalance.innerText = `$${amount.toFixed(2)}`;
   totalDeposit.innerText = `$${amount.toFixed(2)}`;
+  if (accumulatedAmount == 0) {
+    accumulatedInterest.innerText = `$${accumulatedAmount}.00`;
+  }
   accumulatedInterest.innerText = `$${accumulatedAmount.toFixed(2)}`;
   console.log(user.plan);
 }
