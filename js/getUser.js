@@ -11,7 +11,9 @@ async function getUser(backendAPI, frontendAPI) {
         document.addEventListener("DOMContentLoaded", resolve);
       }
     });
-    const response = await axios.get(`${backendAPI}/user`);
+    const response = await axios.get(`${backendAPI}/user`, {
+      withCredentials: true,
+    });
     console.log(response.data);
     const { user } = response.data;
     console.log(user);
