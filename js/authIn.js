@@ -40,6 +40,7 @@ form.addEventListener("submit", async (e) => {
     const { message, success } = response.data;
     console.log("message:", message);
     console.log("success:", success);
+
     if (success) {
       $(function () {
         toastr.success(`${message}`);
