@@ -24,6 +24,8 @@ form.addEventListener("submit", async (e) => {
     $(function () {
       toastr.success("Admin login successful");
     });
+    spinner.style.display = "none";
+    spinnerButton.disabled = false;
     setTimeout(() => {
       window.location.href = `${frontendUrl}/admin.html`;
     }, 1000);
