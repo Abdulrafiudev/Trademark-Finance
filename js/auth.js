@@ -1,4 +1,5 @@
 import backendAPI from "../api/api.js";
+import frontendUrl from "../api/frontend.js";
 
 const username = document.querySelector("#name");
 const email = document.querySelector("#email");
@@ -39,7 +40,7 @@ form.addEventListener("submit", async (e) => {
       });
 
       setTimeout(() => {
-        window.location.href = "../verifyOtp.html";
+        window.location.href = `${frontendUrl}/verifyOtp.html`;
       }, 1000);
     }
   } catch (err) {

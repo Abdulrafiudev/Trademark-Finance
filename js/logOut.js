@@ -1,4 +1,5 @@
 import backendAPI from "../api/api.js";
+import frontendUrl from "../api/frontend.js";
 
 const logoutButton = document.querySelector(".logout_button");
 
@@ -13,7 +14,7 @@ logoutButton.addEventListener("click", async () => {
         toastr.success(message);
       });
       setTimeout(() => {
-        window.location.href = "../index.html";
+        window.location.href = `${frontendUrl}/index.html`;
       }, 1000);
     }
   } catch (err) {

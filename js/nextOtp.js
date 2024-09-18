@@ -1,4 +1,5 @@
 import backendAPI from "../api/api.js";
+import frontendUrl from "../api/frontend.js";
 
 const otpInputs = document.querySelectorAll(".otp_form_div input");
 const otpForm = document.querySelector(".verifyForm");
@@ -40,7 +41,7 @@ otpForm.addEventListener("submit", async (e) => {
         toastr.success(message);
       });
       setTimeout(() => {
-        window.location.href = "../dashboard.html";
+        window.location.href = `${frontendUrl}/dashboard.html`;
       }, 1000);
     } else {
       $(function () {

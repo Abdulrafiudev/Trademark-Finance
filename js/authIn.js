@@ -1,4 +1,5 @@
 import backendAPI from "../api/api.js";
+import frontendUrl from "../api/frontend.js";
 
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
@@ -24,7 +25,7 @@ form.addEventListener("submit", async (e) => {
       toastr.success("Admin login successful");
     });
     setTimeout(() => {
-      window.location.href = "../admin.html";
+      window.location.href = `${frontendUrl}/admin.html`;
     }, 1000);
     return;
   }
@@ -44,7 +45,7 @@ form.addEventListener("submit", async (e) => {
         toastr.success(`${message}`);
       });
       setTimeout(() => {
-        window.location.href = "../dashboard.html";
+        window.location.href = `${frontendUrl}/dashboard.html`;
       }, 1000);
     }
     if (!success) {

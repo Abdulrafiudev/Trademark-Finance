@@ -1,7 +1,8 @@
 import backendAPI from "../api/api.js";
 import getUser from "./getUser.js";
+import frontendUrl from "../api/frontend.js";
 
-const user = await getUser(backendAPI);
+const user = await getUser(backendAPI, frontendUrl);
 const availableBalance = document.querySelector(".user_balance");
 const accumulatedInterest = document.querySelector(".user_interest");
 const totalDeposit = document.querySelector(".user_deposit");

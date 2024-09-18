@@ -1,4 +1,4 @@
-async function getUser(backendAPI) {
+async function getUser(backendAPI, frontendAPI) {
   try {
     //Makes sure the DOM fully loads before proceeding
     await new Promise((resolve) => {
@@ -18,7 +18,7 @@ async function getUser(backendAPI) {
     const { user } = response.data;
     console.log(user);
     if (!response.data.success) {
-      window.location.href = "../login.html";
+      window.location.href = `${frontendAPI}/login.html`;
       return null;
     }
     const firstName = user.username.split(" ")[0];

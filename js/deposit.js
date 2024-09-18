@@ -1,8 +1,9 @@
 import transactions from "./transactionArray.js";
 import backendAPI from "../api/api.js";
 import getUser from "./getUser.js";
+import frontendUrl from "../api/frontend.js";
 
-const user = await getUser(backendAPI);
+const user = await getUser(backendAPI, frontendUrl);
 
 const selectedInput = document.querySelector(
   ".deposit_body_details_cont1 select"
