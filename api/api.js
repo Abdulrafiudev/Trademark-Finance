@@ -1,2 +1,2 @@
-const backendAPI = "http://localhost:3000";
+const backendAPI = "https://trademarkfinancebackend.onrender.com";
 export default backendAPI;
