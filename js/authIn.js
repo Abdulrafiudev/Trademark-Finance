@@ -37,13 +37,16 @@ form.addEventListener("submit", async (e) => {
       withCredentials: true,
     });
     console.log(response.data);
-    const { message, success } = response.data;
-    console.log("message:", message);
+    const { success, token, user } = response.data;
+    console.log("token:", token);
     console.log("success:", success);
+    console.log("user:", user);
+
+    localStorage.setItem("authToken", token);
 
     if (success) {
       $(function () {
-        toastr.success(`${message}`);
+        toastr.success("Login Successful");
       });
       setTimeout(() => {
         window.location.href = `${frontendUrl}/dashboard.html`;
@@ -51,7 +54,7 @@ form.addEventListener("submit", async (e) => {
     }
     if (!success) {
       $(function () {
-        toastr.error(`${message}`);
+        toastr.error(`Password is not a match.`);
       });
     }
   } catch (err) {

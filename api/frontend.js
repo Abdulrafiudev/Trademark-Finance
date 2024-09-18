@@ -1,3 +1,3 @@
-const frontendUrl = "https://abdulrafiudev.github.io/Trademark-Finance";
+const frontendUrl = "https://trademarkfinnance.co";
 
 export default frontendUrl;

@@ -30,9 +30,13 @@ form.addEventListener("submit", async (e) => {
       },
       withCredentials: true,
     });
-    console.log(response.data);
 
-    const { message, success, users } = response.data;
+    const { message, success, user, token } = response.data;
+    console.log("token:", token);
+    console.log("success:", success);
+    console.log("user:", user);
+
+    localStorage.setItem("authToken", token);
 
     if (success) {
       $(function () {
@@ -40,7 +44,7 @@ form.addEventListener("submit", async (e) => {
       });
 
       setTimeout(() => {
-        window.location.href = `${frontendUrl}/verifyOtp.html`;
+        window.location.href = `${frontendUrl}/dashboard.html`;
       }, 1000);
     }
   } catch (err) {
