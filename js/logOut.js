@@ -4,6 +4,7 @@ import frontendUrl from "../api/frontend.js";
 const logoutButton = document.querySelector(".logout_button");
 
 logoutButton.addEventListener("click", async () => {
+  localStorage.removeItem("authToken");
   try {
     const response = await axios.get(`${backendAPI}/logout`, {
       withCredentials: true,
