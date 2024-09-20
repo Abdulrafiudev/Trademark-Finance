@@ -14,8 +14,8 @@ if (user.balance == null || user.balance == "" || user.balance == "null") {
   availableBalance.innerText = "$0.00";
   totalDeposit.innerText = "$0.00";
 } else {
-  availableBalance.innerText = `$${amount.toFixed(2).toLocaleString()}`;
-  totalDeposit.innerText = `$${user.deposit.toFixed(2).toLocaleString()}`;
+  availableBalance.innerText = `$${amount.toLocaleString()}`;
+  totalDeposit.innerText = `$${user.deposit.toLocaleString()}`;
 }
 if (
   user.transactions == null ||
@@ -26,4 +26,4 @@ if (
 } else {
   userTransaction.innerText = user.transactions;
 }
-accumulatedInterest.innerText = `$${user.interest.toFixed(2).toLocaleString()}`;
+accumulatedInterest.innerText = `$${user.interest.toLocaleString()}`;
