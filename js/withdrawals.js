@@ -15,10 +15,19 @@ const availableBalance = document.querySelector(".availableAmount");
 
 amount.value = "";
 
-if (user.balance == 0) {
+if (user.balance == 0 || user.balance == null || user.balance == "null") {
   console.log("true:", true);
   withdrawButtonInput.disabled = true;
+  availableBalance.innerText = `Avaliable Balance: $0.00`;
 }
+
+availableBalance.innerText = `Avaliable Balance: $${user.balance.toLocaleString(
+  "en-US",
+  {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }
+)}`;
 
 amount.addEventListener("input", () => {
   if (amount.value.trim() == "") {
@@ -44,5 +53,3 @@ closeButton.addEventListener("click", () => {
   document.body.style.overflowY = "scroll";
   document.body.style.height = "100vh";
 });
-
-availableBalance.innerText = `Avaliable Balance: $${user.balance}.00`;
