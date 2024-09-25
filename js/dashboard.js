@@ -32,6 +32,9 @@ if (
 } else {
   userTransaction.innerText = user.transactions;
 }
+if (user.interest == null || user.interest == "null" || user.interest == 0) {
+  accumulatedInterest.innerText = "$0.00";
+}
 accumulatedInterest.innerText = `$${user.interest.toLocaleString("en-US", {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
