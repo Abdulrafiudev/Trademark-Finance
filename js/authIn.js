@@ -1,6 +1,8 @@
 import backendAPI from "../api/api.js";
 import frontendUrl from "../api/frontend.js";
 
+console.log("backend API:", backendAPI);
+
 const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const form = document.querySelector(".loginForm");
