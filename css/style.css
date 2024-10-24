@@ -4054,6 +4054,18 @@ h4.panel-title a.collapsed:before {
   color: #111;
   font-size: 16px;
 }
+.forgetpassword {
+  display: flex;
+  justify-content: start;
+  margin-top: -20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+@media (max-width: 38em) {
+  .forgetpassword {
+    margin-top: -10px;
+  }
+}
 
 .social li a i {
   padding: 0 2px;
