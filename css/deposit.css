@@ -76,13 +76,19 @@ footer {
 }
 .amount_error span,
 .crypto_error span,
-.error_message {
+.error_message,
+.error_message1,
+.error_message2,
+.error_message4 {
   font-size: 16px;
   font-weight: 600;
   color: red;
   display: none;
 }
-.error_message {
+.error_message,
+.error_message1,
+.error_message2,
+.error_message4 {
   font-size: 16px !important;
 }
 .subscription_error_span {

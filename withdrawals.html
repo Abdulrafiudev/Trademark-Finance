@@ -75,12 +75,31 @@
           <h3 class="availableAmount"></h3>
           <form class="deposit_body_details">
             <div class="deposit_body_details_cont">
+              <span> Select token</span>
+              <select>
+                <option selected value="null">Select cryptocurrency</option>
+                <option value="Bitcoin">Bitcoin (BTC)</option>
+                <option value="Tether">Tether (USDT)</option>
+                <option value="Ethereum">Ethereum (ETH)</option>
+                <option value="Solana">Solana (SOL)</option>
+              </select>
+            </div>
+            <span class="error_message2"
+              >Please select a valid crypto token</span
+            >
+            <div class="deposit_body_details_cont">
               <span>
                 Input your personal wallet address to receive your crypto
                 tokens.</span
               >
-              <input placeholder="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH" />
+              <input
+                placeholder="1FfmbHfnpaZjKFvyi1okTjJJusN455paPH"
+                class="cryptoWallet"
+              />
             </div>
+            <span class="error_message1"
+              >Please input a valid crypto wallet</span
+            >
 
             <div class="deposit_body_details_cont amountwithdraw">
               <label> Amount($): </label>
@@ -89,8 +108,11 @@
             <span class="error_message"
               >Please input an amount to withdraw</span
             >
+            <span class="error_message4">Invalid amount inputed</span>
             <div class="withdrawal_submit">
-              <input type="button" value="Withdraw" />
+              <button value="Withdraw" class="spinner_button_div">
+                <span id="spinner" class="spinner"></span> Withdraw
+              </button>
             </div>
           </form>
         </div>
@@ -102,10 +124,9 @@
         <div class="close_button">
           <i class="fas fa-times"></i>
         </div>
-        <h2>Unable to Withdraw</h2>
+        <h2>Withdrawal Request</h2>
         <p class="deposit_modal_statement">
-          You must have a minimum of $10,000 worth of crypto invested for a
-          minimum of 3 months to be able to withdraw your funds.
+          Your withdrawal request has been submitted and is under review.
         </p>
       </div>
     </div>

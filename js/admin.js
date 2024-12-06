@@ -4,6 +4,7 @@ const emailInput = document.querySelector(".emailInput");
 const subscriptionInput = document.querySelector(".subscriptionInput");
 const transactionInput = document.querySelector(".transactionInput");
 const amountInput = document.querySelector(".amountInput");
+const deductedAmountInput = document.querySelector(".deductedAmountInput");
 const form = document.querySelector(".adminForm");
 const spinner = document.querySelector(".spinner");
 
@@ -14,6 +15,7 @@ form.addEventListener("submit", async (event) => {
     subscription: subscriptionInput.value,
     transaction: transactionInput.value,
     amount: amountInput.value,
+    deductedAmount: deductedAmountInput.value,
   };
   try {
     spinner.style.display = "block";

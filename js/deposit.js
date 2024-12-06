@@ -22,6 +22,7 @@ const walletAddress = document.querySelector(".deposit_modal_address__wallet");
 const bitcoinWallet = "bc1q4lfmrrzvg4n9vkt6uv57qv4xxe5qslp8nmx3d0";
 const tetherWallet = "TRaw2EZti39siHfJep8ggnkDSjjPhc5bkd";
 const ethereumWallet = "0x6C6380350a42bE99b2D9c81168339E0c3E9b5cb6";
+const solanaWallet = "123456753172";
 const confirmButton = document.querySelector(".confirm_button");
 
 const convertedInfoAmountDiv1 = document.querySelector(
@@ -100,6 +101,11 @@ async function currencyConverter() {
             modalStatement.innerHTML = `You have requested <span style="color: green;">$${amount} </span> worth of ${toCurrency}.Please pay <span style="color: green;">${convertedAmount} ${toCurrency}</span> for a
             successful payment.`;
             walletAddress.innerText = ethereumWallet;
+          } else if (toCurrency == "Solana") {
+            modalHeader.innerText = `Solana wallet payment`;
+            modalStatement.innerHTML = `You have requested <span style="color: green;">$${amount} </span> worth of ${toCurrency}.Please pay <span style="color: green;">${convertedAmount} ${toCurrency}</span> for a
+            successful payment.`;
+            walletAddress.innerText = solanaWallet;
           } else {
             console.log("error");
           }
