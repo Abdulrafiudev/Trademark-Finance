@@ -22,7 +22,7 @@ const walletAddress = document.querySelector(".deposit_modal_address__wallet");
 const bitcoinWallet = "bc1q4lfmrrzvg4n9vkt6uv57qv4xxe5qslp8nmx3d0";
 const tetherWallet = "TRaw2EZti39siHfJep8ggnkDSjjPhc5bkd";
 const ethereumWallet = "0x6C6380350a42bE99b2D9c81168339E0c3E9b5cb6";
-const solanaWallet = "123456753172";
+const solanaWallet = "9MWc9X84KLucxXn715uhB9Z1QSjd7uvdNg5PkJXj9TkB";
 const confirmButton = document.querySelector(".confirm_button");
 
 const convertedInfoAmountDiv1 = document.querySelector(
