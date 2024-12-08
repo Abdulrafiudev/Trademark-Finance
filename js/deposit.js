@@ -135,7 +135,8 @@ confirmButton.addEventListener("click", async () => {
       trx: `tr-${Date.now()}`,
       transacted: `${year}-${month}-${day}`,
       amount: `${convertedAmount} ${toCurrency}`,
-      statusbar: "🟡Pending",
+      // statusbar: "🟡Pending",
+      statusbar: "Deposit ➡️",
     };
     transactions.push(itemTransacted);
     localStorage.setItem("transaction", JSON.stringify(transactions));

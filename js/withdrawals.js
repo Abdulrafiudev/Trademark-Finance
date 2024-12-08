@@ -1,5 +1,6 @@
 import backendAPI from "../api/api.js";
 import getUser from "./getUser.js";
+import transactions from "./transactionArray.js";
 // import { amount as availableAmount } from "./dashboard.js";
 
 const user = await getUser(backendAPI);
@@ -79,9 +80,6 @@ selectedCurrency.addEventListener("input", () => {
 });
 
 withdrawButton.addEventListener("click", async () => {
-  //   // modal.classList.add("show");
-  //   // document.body.style.overflowY = "hidden";
-  //   // document.body.style.height = "100vh";
   spinner.style.display = "block";
   spinnerButton.disabled = true;
   const formData = {
@@ -101,9 +99,26 @@ withdrawButton.addEventListener("click", async () => {
     console.log("response:", message);
 
     if (success) {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const day = String(today.getDate()).padStart(2, "0");
+      const itemTransacted = {
+        delete: '<a class="fa fa-trash icon-delete-product"></a>',
+        trx: `tr-${Date.now()}`,
+        transacted: `${year}-${month}-${day}`,
+        amount: `$${amount.value} `,
+        // statusbar: "🟡Pending",
+        statusbar: "Withdrawal ⬅️",
+      };
+      transactions.push(itemTransacted);
+      localStorage.setItem("transaction", JSON.stringify(transactions));
       modal.classList.add("show");
       document.body.style.overflowY = "hidden";
       document.body.style.height = "100vh";
+      setTimeout(() => {
+        window.location.href = "../transaction.html";
+      }, 1500);
     }
   } catch (err) {
     console.log(err);
