@@ -19,10 +19,16 @@ const spinnerButton = document.querySelector(".spinner_button_div1");
 const modalHeader = document.querySelector(".deposit_modal h2");
 const modalStatement = document.querySelector(".deposit_modal_statement");
 const walletAddress = document.querySelector(".deposit_modal_address__wallet");
-const bitcoinWallet = "bc1q4lfmrrzvg4n9vkt6uv57qv4xxe5qslp8nmx3d0";
+// const bitcoinWallet = "bc1q4lfmrrzvg4n9vkt6uv57qv4xxe5qslp8nmx3d0";
+//me
+const bitcoinWallet = "bc1q9ydy93q5lt628ndxd7fhy82a2j3hk299jr9j68";
 const tetherWallet = "TRaw2EZti39siHfJep8ggnkDSjjPhc5bkd";
-const ethereumWallet = "0x6C6380350a42bE99b2D9c81168339E0c3E9b5cb6";
-const solanaWallet = "9MWc9X84KLucxXn715uhB9Z1QSjd7uvdNg5PkJXj9TkB";
+// const ethereumWallet = "0x6C6380350a42bE99b2D9c81168339E0c3E9b5cb6";
+//me
+const ethereumWallet = "0xD877c32E4Ed078896fd0267963c6b68123c7Bdaa";
+// const solanaWallet = "9MWc9X84KLucxXn715uhB9Z1QSjd7uvdNg5PkJXj9TkB";
+//me
+const solanaWallet = "BQg9kfCi5ppUqrLFRLMViaW8QRG5eqc9qr4pQoAnq9Ty";
 const confirmButton = document.querySelector(".confirm_button");
 
 const convertedInfoAmountDiv1 = document.querySelector(
