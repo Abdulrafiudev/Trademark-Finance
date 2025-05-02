@@ -11,7 +11,7 @@ const transactions =
 
 console.log("transactions:", transactions);
 
-if (window.location.pathname.includes("transactions.html")) {
+if (window.location.pathname.includes("transaction.html")) {
   const transactionSection = document.querySelector(".transaction_list_body");
 
   function renderTransaction() {
