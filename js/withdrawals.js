@@ -1,9 +1,10 @@
 import backendAPI from "../api/api.js";
 import getUser from "./getUser.js";
-import transactions from "./transactionArray.js";
+import transactions from "./transaction.js";
 // import { amount as availableAmount } from "./dashboard.js";
 
 const user = await getUser(backendAPI);
+const userEmail = user.email;
 
 const withdrawButton = document.querySelector(".withdrawal_submit");
 const withdrawButtonInput = document.querySelector(".withdrawal_submit button");
@@ -112,7 +113,10 @@ withdrawButton.addEventListener("click", async () => {
         statusbar: "Withdrawal ⬅️",
       };
       transactions.push(itemTransacted);
-      localStorage.setItem("transaction", JSON.stringify(transactions));
+      localStorage.setItem(
+        `transaction_${userEmail}`,
+        JSON.stringify(transactions)
+      );
       modal.classList.add("show");
       document.body.style.overflowY = "hidden";
       document.body.style.height = "100vh";
