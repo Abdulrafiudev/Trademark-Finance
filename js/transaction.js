@@ -11,12 +11,13 @@ const transactions =
 
 console.log("transactions:", transactions);
 
-const transactionSection = document.querySelector(".transaction_list_body");
+if (window.location.pathname.includes("transactions.html")) {
+  const transactionSection = document.querySelector(".transaction_list_body");
 
-function renderTransaction() {
-  let transactionHtml = ``;
-  transactions.forEach((transaction, index) => {
-    transactionHtml += `
+  function renderTransaction() {
+    let transactionHtml = ``;
+    transactions.forEach((transaction, index) => {
+      transactionHtml += `
         <tr>
                       <td class="text-center delete_button" data-index="${index}">
                         ${transaction.delete}
@@ -33,8 +34,9 @@ function renderTransaction() {
                       </td>
                     </tr>
         `;
-  });
-  transactionSection.innerHTML = transactionHtml;
+    });
+    transactionSection.innerHTML = transactionHtml;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
