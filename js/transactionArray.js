@@ -1,3 +1,5 @@
+import getUser from "./getUser.js";
+
 const user = getUser(backendAPI, frontendUrl);
 const userEmail = user.email;
 
