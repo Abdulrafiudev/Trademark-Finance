@@ -2,7 +2,7 @@ import backendAPI from "../api/api.js";
 import getUser from "./getUser.js";
 import frontendUrl from "../api/frontend.js";
 
-const user = getUser(backendAPI, frontendUrl);
+const user = await getUser(backendAPI, frontendUrl);
 const userEmail = user.email;
 
 export const transactions =
