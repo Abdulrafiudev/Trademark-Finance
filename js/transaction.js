@@ -6,7 +6,7 @@ const user = await getUser(backendAPI, frontendUrl);
 const userEmail = user.email;
 console.log("userEmail:", userEmail);
 
-export const transactions =
+const transactions =
   JSON.parse(localStorage.getItem(`transaction_${userEmail}`)) || [];
 
 console.log("transactions:", transactions);
@@ -58,3 +58,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 renderTransaction();
+
+export default transactions;
