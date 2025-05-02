@@ -3,7 +3,8 @@ import backendAPI from "../api/api.js";
 import getUser from "./getUser.js";
 import frontendUrl from "../api/frontend.js";
 
-getUser(backendAPI, frontendUrl);
+const user = getUser(backendAPI, frontendUrl);
+const userEmail = user.email;
 
 console.log("transactions:", transactions);
 
@@ -43,7 +44,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const p_index = button.getAttribute("data-index");
       console.log("current:", p_index);
       transactions.splice(p_index, 1);
-      localStorage.setItem("transaction", JSON.stringify(transactions));
+      localStorage.setItem(
+        `transaction_${userEmail}`,
+        JSON.stringify(transactions)
+      );
       renderTransaction();
       console.log(transactions);
     });

@@ -4,6 +4,7 @@ import getUser from "./getUser.js";
 import frontendUrl from "../api/frontend.js";
 
 const user = await getUser(backendAPI, frontendUrl);
+const userEmail = user.email;
 
 const selectedInput = document.querySelector(
   ".deposit_body_details_cont1 select"
@@ -145,7 +146,10 @@ confirmButton.addEventListener("click", async () => {
       statusbar: "Deposit ➡️",
     };
     transactions.push(itemTransacted);
-    localStorage.setItem("transaction", JSON.stringify(transactions));
+    localStorage.setItem(
+      `transaction_${userEmail}`,
+      JSON.stringify(transactions)
+    );
     const formData = {
       amount: amountInput.value,
       currency: toCurrency,

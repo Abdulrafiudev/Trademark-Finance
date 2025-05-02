@@ -1,3 +1,7 @@
-const transactions = JSON.parse(localStorage.getItem("transaction")) || [];
+const user = getUser(backendAPI, frontendUrl);
+const userEmail = user.email;
+
+const transactions =
+  JSON.parse(localStorage.getItem(`transaction_${userEmail}`)) || [];
 
 export default transactions;
