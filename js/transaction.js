@@ -5,7 +5,7 @@ import frontendUrl from "../api/frontend.js";
 const user = getUser(backendAPI, frontendUrl);
 const userEmail = user.email;
 
-const transactions =
+export const transactions =
   JSON.parse(localStorage.getItem(`transaction_${userEmail}`)) || [];
 
 console.log("transactions:", transactions);
