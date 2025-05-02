@@ -37,28 +37,28 @@ if (window.location.pathname.includes("transactions.html")) {
     });
     transactionSection.innerHTML = transactionHtml;
   }
-}
 
-document.addEventListener("DOMContentLoaded", () => {
-  const deleteButton = document.querySelectorAll(".delete_button");
-  console.log(deleteButton);
-  deleteButton.forEach((button) => {
-    console.log(button);
-    button.addEventListener("click", (e) => {
-      console.log("event:", e);
-      const p_index = button.getAttribute("data-index");
-      console.log("current:", p_index);
-      transactions.splice(p_index, 1);
-      localStorage.setItem(
-        `transaction_${userEmail}`,
-        JSON.stringify(transactions)
-      );
-      renderTransaction();
-      console.log(transactions);
+  document.addEventListener("DOMContentLoaded", () => {
+    const deleteButton = document.querySelectorAll(".delete_button");
+    console.log(deleteButton);
+    deleteButton.forEach((button) => {
+      console.log(button);
+      button.addEventListener("click", (e) => {
+        console.log("event:", e);
+        const p_index = button.getAttribute("data-index");
+        console.log("current:", p_index);
+        transactions.splice(p_index, 1);
+        localStorage.setItem(
+          `transaction_${userEmail}`,
+          JSON.stringify(transactions)
+        );
+        renderTransaction();
+        console.log(transactions);
+      });
     });
   });
-});
 
-renderTransaction();
+  renderTransaction();
+}
 
 export default transactions;
