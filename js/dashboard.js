@@ -7,6 +7,8 @@ const availableBalance = document.querySelector(".user_balance");
 const accumulatedInterest = document.querySelector(".user_interest");
 const totalDeposit = document.querySelector(".user_deposit");
 const userTransaction = document.querySelector(".user-transaction");
+const activePlan = document.querySelector(".active_plan");
+const withdrawableAmount = document.querySelector(".withdrawable_amount");
 
 export let amount = user.balance;
 
@@ -39,3 +41,14 @@ accumulatedInterest.innerText = `$${user.interest.toLocaleString("en-US", {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
 })}`;
+
+activePlan.innerText =
+  user.plan == null || user.plan == "null" ? "No active plan" : user.plan;
+
+withdrawableAmount.innerText =
+  user.referral_bonus == 0 || user.referral_bonus == "0"
+    ? "$0.00"
+    : `$${user.referral_bonus.toLocaleString("en-US", {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+      })}`;

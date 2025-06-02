@@ -120,6 +120,8 @@ footer {
   font-size: 16px !important;
   font-weight: 600;
 }
+.withdrawal_modal1,
+.confirmPassword_modal,
 .modal {
   position: fixed;
   top: 0;
@@ -135,7 +137,9 @@ footer {
   z-index: 100;
   transition: display 1s;
 }
-.modal.show {
+.modal.show,
+.withdrawal_modal1.show,
+.confirmPassword_modal.show {
   display: flex !important;
 }
 .deposit_modal {
@@ -154,7 +158,10 @@ footer {
   position: relative;
 }
 .withdrawal_modal {
-  height: 30%;
+  height: 20%;
+}
+.password_confirm_modal {
+  height: 38%;
 }
 .subscription-modal {
   /* height: 62%; */

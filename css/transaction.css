@@ -22,10 +22,48 @@
   z-index: 100;
   cursor: pointer;
 }
+.transaction_header_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom: 20px; */
+  width: 100%;
+}
+.transaction-filter {
+  /* margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  background: #f9f9f9; */
+}
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.filter-form .form-group {
+  flex: 1;
+  min-width: 180px;
+}
+.form-control {
+  padding: 10px 10px;
+  border-radius: 5px;
+}
 @media (max-width: 63em) {
   .table-responsive {
     border: none;
     padding: 0;
+  }
+  .transaction_header_div {
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+  }
+  .transaction-filter {
+    width: 100%;
   }
 }
 @media (max-width: 38em) {

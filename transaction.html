@@ -64,15 +64,66 @@
             <span>Subscriptions</span>
           </a>
 
-          <a href="terms.html">
-            <i class="fa fa-file-alt"></i><span> Terms Of Services </span>
+          <a href="ref.html">
+            <i class="fa-solid fa-copy"></i><span> Refer</span>
           </a>
           <a class="logout_button">
             <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
           </a>
         </div>
         <div class="deposit_body">
-          <h2>Transaction History</h2>
+          <div class="transaction_header_div">
+            <h2>Transaction History</h2>
+            <div class="transaction-filter">
+              <!-- <h4>Filter Transactions</h4> -->
+              <form id="transactionFilterForm" class="filter-form">
+                <div class="form-group">
+                  <label for="filter-date">Date:</label>
+                  <input
+                    type="date"
+                    id="filter-date"
+                    name="filter-date"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="filter-amount">Amount:</label>
+                  <input
+                    id="filter-amount"
+                    name="filter-amount"
+                    class="form-control"
+                    placeholder="Enter amount"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="filter-status">Status:</label>
+                  <select
+                    id="filter-status"
+                    name="filter-status"
+                    class="form-control"
+                  >
+                    <option value="">All</option>
+                    <option value="deposit">deposit</option>
+                    <option value="withdrawal">withdrawal</option>
+                  </select>
+                </div>
+                <div
+                  style="display: flex; flex-direction: column"
+                  class="form-group"
+                >
+                  <label for="filter-search">Search</label>
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    id="filter-button"
+                  >
+                    Search
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
           <div class="col-xs-12 table-responsive">
             <table class="table order text-center">
               <colgroup>
@@ -231,7 +282,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="./js/dashboard.js" type="module"></script>
+    <!-- <script src="./js/dashboard.js" type="module"></script> -->
     <script src="js/logOut.js" type="module"></script>
     <script src="js/transaction.js" type="module"></script>
     <script src="js/copyright.js"></script>

@@ -63,8 +63,8 @@
             <span>Subscriptions</span>
           </a>
 
-          <a href="terms.html">
-            <i class="fa fa-file-alt"></i><span> Terms Of Services </span>
+          <a href="ref.html">
+            <i class="fa-solid fa-copy"></i><span> Refer</span>
           </a>
           <a class="logout_button">
             <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
@@ -119,15 +119,40 @@
       </div>
     </main>
 
-    <div class="modal">
+    <div class="withdrawal_modal1 modal">
       <div class="deposit_modal withdrawal_modal">
-        <div class="close_button">
+        <!-- <div class="close_button">
           <i class="fas fa-times"></i>
-        </div>
+        </div> -->
         <h2>Withdrawal Request</h2>
         <p class="deposit_modal_statement">
           Your withdrawal request has been submitted and is under review.
         </p>
+      </div>
+    </div>
+
+    <div class="confirmPassword_modal">
+      <div class="deposit_modal withdrawal_modal password_confirm_modal">
+        <div class="close_button">
+          <i class="fas fa-times"></i>
+        </div>
+        <h2>Password Confirmation</h2>
+        <p class="deposit_modal_statement">
+          Input your password to confirm your withdrawal request.
+        </p>
+        <form class="confirmPassword_form">
+          <input
+            type="password"
+            placeholder="Enter your password"
+            class="password_confirmation_input"
+          />
+          <span class="error_message3">Incorrect Password</span>
+          <div class="confirmPassword_submit">
+            <button value="Confirm" class="spinner_button_div">
+              <span id="spinner2" class="spinner"></span> Confirm
+            </button>
+          </div>
+       
       </div>
     </div>
 

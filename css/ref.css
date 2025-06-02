@@ -1,0 +1,37 @@
+.ref_container {
+  /* background-color: yellow; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.ref_container h1 {
+  color: white;
+}
+.ref_code {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 10px;
+}
+.fa-copy {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.code {
+  color: #fd961a;
+  font-weight: bold;
+  border: none;
+  width: 80%;
+  background-color: transparent;
+  outline: none;
+}
+@media (max-width: 600px) {
+  .code {
+    width: 100%;
+  }
+}

@@ -14,9 +14,9 @@ console.log("transactions:", transactions);
 if (window.location.pathname.includes("transaction.html")) {
   const transactionSection = document.querySelector(".transaction_list_body");
 
-  function renderTransaction() {
+  function renderTransaction(data = transactions) {
     let transactionHtml = ``;
-    transactions.forEach((transaction, index) => {
+    data.forEach((transaction, index) => {
       transactionHtml += `
         <tr>
                       <td class="text-center delete_button" data-index="${index}">
@@ -36,11 +36,9 @@ if (window.location.pathname.includes("transaction.html")) {
         `;
     });
     transactionSection.innerHTML = transactionHtml;
-  }
 
-  document.addEventListener("DOMContentLoaded", () => {
     const deleteButton = document.querySelectorAll(".delete_button");
-    console.log(deleteButton);
+    console.log("delete button:", deleteButton);
     deleteButton.forEach((button) => {
       console.log(button);
       button.addEventListener("click", (e) => {
@@ -56,9 +54,38 @@ if (window.location.pathname.includes("transaction.html")) {
         console.log(transactions);
       });
     });
-  });
+  }
 
   renderTransaction();
+
+  // document.addEventListener("DOMContentLoaded", () => {});
+
+  // Filtering functionality
+  const dateInput = document.getElementById("filter-date");
+  const amountInput = document.getElementById("filter-amount");
+  const statusInput = document.getElementById("filter-status");
+  const filterForm = document.querySelector(".filter-form");
+
+  filterForm?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const filterDate = dateInput?.value.trim(); // Format: "YYYY-MM-DD"
+    const filterAmount = amountInput?.value.trim();
+    const filterStatus = statusInput?.value.trim().toLowerCase(); // "deposit" or "withdrawal"
+
+    const filtered = transactions.filter((tx) => {
+      const matchDate = !filterDate || tx.transacted === filterDate;
+      const matchAmount = !filterAmount || tx.amount.includes(filterAmount);
+      const matchStatus =
+        !filterStatus ||
+        tx.statusbar.toLowerCase().includes(filterStatus.toLowerCase());
+
+      return matchDate && matchAmount && matchStatus;
+    });
+    console.log("Filtered Transactions:", filtered);
+
+    renderTransaction(filtered);
+  });
 }
 
 export default transactions;

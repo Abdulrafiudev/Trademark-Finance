@@ -21,7 +21,40 @@
   color: black;
   border: 1px solid white;
 } */
-
+.confirmPassword_form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+}
+.password_confirmation_input {
+  width: 50%;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+  font-size: 16px;
+  color: black;
+}
+.confirmPassword_submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.confirmPassword_form button {
+  width: 30%;
+  border-radius: 40px;
+  background-color: #fd961a;
+  border: 1px solid #fd961a;
+  transition: background-color 0.7s;
+  font-weight: 700;
+}
+.error_message3 {
+  color: red;
+  font-size: 16px;
+  display: none;
+}
 @media (max-width: 38em) {
   .withdrawal_submit input {
     width: 100%;

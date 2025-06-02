@@ -11,6 +11,9 @@ const passwordError = document.querySelector(".password_error");
 const form = document.querySelector("#registerForm");
 console.log(form);
 
+const urlParams = new URLSearchParams(window.location.search);
+const ref = urlParams.get("ref");
+
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
@@ -21,6 +24,7 @@ form.addEventListener("submit", async (e) => {
     username: username.value,
     email: email.value,
     password: password.value,
+    referredBy: ref ? ref : null,
   };
 
   try {
